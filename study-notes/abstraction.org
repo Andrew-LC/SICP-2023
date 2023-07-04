@@ -1,13 +1,21 @@
 #+Title: Formulating Abstractions with Higher-Order Procedures
+#+BEGIN_EXPORT latex
+\setlength{\unitlength}{1cm}
+\thicklines
+\begin{picture}(10,6)
+\put(2,2.2){\line(1,0){6}}
+\put(2,2.2){\circle{2}}
+\put(6,2.2){\oval(4,2)[r]}
+\end{picture}
+#+END_EXPORT
 
 The professor stresses the importance of being able to visualize the
 process generated, this is necessary to be able to create the programs
 that we want.
 
-Take for example a skilled photographer, he's able to visualize
+take for example a skilled photographer, he's able to visualize
 how the photo is going to turn out with each settings and the
 different things needed to make the shot perfect.
-
 
 ** Recursion and Iteration
 *** *Recursive method*
@@ -27,7 +35,6 @@ different things needed to make the shot perfect.
    (* n (factorial (- n 1))))) 
 #+end_src
 
-
 *** *Iterative method*
 + Fixed state variables
 + It uses a set of registers and no auxillary memory.
@@ -44,6 +51,16 @@ different things needed to make the shot perfect.
 #+end_src
 
 
-Keep this in mind that a recursive process and procedure are
+*Note:* Keep this in mind that a recursive process and procedure are
 entirely different, one talks about the syntactic way of calling
 the procedure and the other talks about it's evolution.
+
+** Tree Recursion
+[[file:./images/tree-recursive.png]]
+
+This program is highly in efficient for number operations but
+highly efficient for data structures. 
+Even the lisp evaluation is a tree recursive process.
+
+We can use memoization or tabulation to make this more efficient
+[Refer page 41 and ex 3.27]
