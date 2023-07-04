@@ -1,0 +1,49 @@
+#+Title: Formulating Abstractions with Higher-Order Procedures
+
+The professor stresses the importance of being able to visualize the
+process generated, this is necessary to be able to create the programs
+that we want.
+
+Take for example a skilled photographer, he's able to visualize
+how the photo is going to turn out with each settings and the
+different things needed to make the shot perfect.
+
+
+** Recursion and Iteration
+*** *Recursive method*
++ It's a chain of deferred operations.
++ It has a linear growth of n.
++ It consumes to much memory as the interpreter needs
+  to keep track of every operation, if even one is damaged
+  it has to restart from the begining.
++ It uses a *stack*.
+ 
+[[file:./images/recursion.png]]
+
+#+begin_src scheme :tangle ../src/examples/recursion-and-iteration.scm 
+(define (factorial n)
+ (if (= n 1)
+   1
+   (* n (factorial (- n 1))))) 
+#+end_src
+
+
+*** *Iterative method*
++ Fixed state variables
++ It uses a set of registers and no auxillary memory.
+
+[[file:./images/iteration-method.png]]
+
+#+begin_src scheme :tangle ../src/examples/recursion-and-iteration.scm 
+  (define (factorial n)
+   (define (iter product counter)
+     (if (> counter n)
+       product
+       (iter (* product counter) counter)))
+    (iter 1 1))
+#+end_src
+
+
+Keep this in mind that a recursive process and procedure are
+entirely different, one talks about the syntactic way of calling
+the procedure and the other talks about it's evolution.
