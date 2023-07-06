@@ -1,20 +1,8 @@
 #+Title: Formulating Abstractions with Higher-Order Procedures
-#+BEGIN_EXPORT latex
-\setlength{\unitlength}{1cm}
-\thicklines
-\begin{picture}(10,6)
-\put(2,2.2){\line(1,0){6}}
-\put(2,2.2){\circle{2}}
-\put(6,2.2){\oval(4,2)[r]}
-\end{picture}
-#+END_EXPORT
 
 The professor stresses the importance of being able to visualize the
 process generated, this is necessary to be able to create the programs
-that we want.
-
-take for example a skilled photographer, he's able to visualize
-how the photo is going to turn out with each settings and the
+that we want, take for example a skilled photographer, he's able to visualize how the photo is going to turn out with each settings and the
 different things needed to make the shot perfect.
 
 ** Recursion and Iteration
@@ -64,3 +52,12 @@ Even the lisp evaluation is a tree recursive process.
 
 We can use memoization or tabulation to make this more efficient
 [Refer page 41 and ex 3.27]
+
+** Order of Growth
+-----
+It is a mathematical way of visualizing how a particular procedure grows, for example we can look at a linear iterative process of factorial, it has a theta(1) constant space and theta(n) number of steps, meaning that the number of steps grows linearly to n while the space required for the computation remains the same.
+
+This book shows the example of growth rates using two problems,
++ Smallest Divisor
++ Fermats test
+
